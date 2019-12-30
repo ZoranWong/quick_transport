@@ -1,41 +1,69 @@
 {
-  "name": "quick_transport",
-  "version": "0.1.0",
-  "private": true,
-  "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
-  },
-  "dependencies": {
-    "core-js": "^3.4.4",
-    "vue": "^2.6.10"
-  },
-  "devDependencies": {
-    "@vue/cli-plugin-babel": "^4.1.0",
-    "@vue/cli-plugin-eslint": "^4.1.0",
-    "@vue/cli-service": "^4.1.0",
-    "babel-eslint": "^10.0.3",
-    "eslint": "^5.16.0",
-    "eslint-plugin-vue": "^5.0.0",
-    "vue-template-compiler": "^2.6.10"
-  },
-  "eslintConfig": {
-    "root": true,
-    "env": {
-      "node": true
+    "name": "quick_transport",
+    "version": "0.1.0",
+    "private": true,
+    "scripts": {
+        "lint": "vue-cli-service lint",
+        "build": "cross-env NODE_ENV=production UNI_PLATFORM=mp-weixin vue-cli-service --mode prod uni-build",
+        "dev": "cross-env NODE_ENV=development UNI_PLATFORM=mp-weixin vue-cli-service --mode development uni-build --watch",
+        "info": "node node_modules/@dcloudio/vue-cli-plugin-uni/commands/info.js"
     },
-    "extends": [
-      "plugin:vue/essential",
-      "eslint:recommended"
-    ],
-    "rules": {},
-    "parserOptions": {
-      "parser": "babel-eslint"
-    }
-  },
-  "browserslist": [
-    "> 1%",
-    "last 2 versions"
-  ]
+    "dependencies": {
+        "@dcloudio/uni-app-plus": "*",
+        "@dcloudio/uni-h5": "*",
+        "@dcloudio/uni-mp-alipay": "*",
+        "@dcloudio/uni-mp-baidu": "*",
+        "@dcloudio/uni-mp-qq": "*",
+        "@dcloudio/uni-mp-toutiao": "*",
+        "@dcloudio/uni-mp-weixin": "*",
+        "cross-env": "^5.2.0",
+        "flyio": "^0.6.2",
+        "moment": "^2.24.0",
+        "regenerator-runtime": "^0.12.1",
+        "vue": "^2.6.10",
+        "vuex": "^3.0.1"
+    },
+    "devDependencies": {
+        "@babel/runtime-corejs2": "^7.7.7",
+        "@dcloudio/uni-cli-shared": "*",
+        "@dcloudio/uni-template-compiler": "*",
+        "@dcloudio/vue-cli-plugin-hbuilderx": "latest",
+        "@dcloudio/vue-cli-plugin-uni": "latest",
+        "@dcloudio/webpack-uni-mp-loader": "*",
+        "@dcloudio/webpack-uni-pages-loader": "*",
+        "@types/html5plus": "*",
+        "@types/uni-app": "*",
+        "@vue/cli-plugin-babel": "3.5.1",
+        "@vue/cli-plugin-eslint": "^3.8.0",
+        "@vue/cli-service": "^3.8.0",
+        "@vue/eslint-config-standard": "^4.0.0",
+        "babel-eslint": "^10.0.1",
+        "babel-plugin-import": "^1.11.0",
+        "eslint": "^5.16.0",
+        "eslint-plugin-vue": "^5.0.0",
+        "postcss-comment": "^2.0.0",
+        "sass": "^1.21.0",
+        "sass-loader": "^7.1.0",
+        "stylus": "^0.54.5",
+        "stylus-loader": "^3.0.2",
+        "vue-template-compiler": "^2.6.10"
+    },
+    "eslintConfig": {
+        "root": true,
+        "env": {
+            "node": true
+        },
+        "extends": [
+            "plugin:vue/essential",
+            "eslint:recommended"
+        ],
+        "rules": {},
+        "parserOptions": {
+            "parser": "babel-eslint"
+        }
+    },
+    "browserslist": [
+        "> 1%",
+        "last 2 versions"
+    ]
 }
